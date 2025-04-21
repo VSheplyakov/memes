@@ -4,11 +4,11 @@ import { Image } from "@heroui/image";
 import { Link } from "@heroui/link";
 import { Meme } from "@/types";
 
-interface Props {
+interface MemeCardProps {
   meme: Meme;
 }
 
-export default function MemeCard({ meme }: Props) {
+export default function MemeCard({ meme }: MemeCardProps) {
   return (
     <Card className="w-full shadow-md hover:shadow-xl dark:shadow-white/10 hover:dark:shadow-white/10">
       <CardHeader className="justify-center p-0">

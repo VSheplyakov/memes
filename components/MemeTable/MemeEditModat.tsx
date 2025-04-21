@@ -11,7 +11,7 @@ import { Button } from "@heroui/button";
 import { useState } from "react";
 import { Meme } from "@/types";
 
-interface Props {
+interface MemeEditModalProps {
   isOpen: boolean;
   meme: Meme;
   onClose: () => void;
@@ -23,7 +23,7 @@ export default function MemeEditModal({
   meme,
   onClose,
   onSave,
-}: Props) {
+}: MemeEditModalProps) {
   const [title, setTitle] = useState(meme.title);
   const [image, setImage] = useState(meme.image);
   const [likes, setLikes] = useState(meme.likes.toString());
@@ -40,7 +40,7 @@ export default function MemeEditModal({
     const imageUrlRegex = /^https?:\/\/.+\.(jpg|jpeg|png|webp)$/i;
     if (!imageUrlRegex.test(image)) {
       newErrors.image =
-        "Image URL must start with http(s) and end with .jpg/.png/etc";
+        "Image URL must start with http(s) and end with .jpg/.png/.jpeg/.webp";
     }
     if (!/^\d{1,2}$/.test(likes))
       newErrors.likes = "Likes must be a number from 0 to 99";
@@ -89,10 +89,10 @@ export default function MemeEditModal({
           />
         </ModalBody>
         <ModalFooter>
-          <Button variant="flat" onClick={onClose}>
+          <Button variant="flat" onPress={onClose}>
             Cancel
           </Button>
-          <Button color="primary" onClick={handleSave}>
+          <Button color="primary" onPress={handleSave}>
             Save
           </Button>
         </ModalFooter>

@@ -65,12 +65,12 @@ export const Navbar = () => {
       <NavbarContent className="flex lg:hidden" justify="end">
         <NavbarItem className="flex gap-4 items-center justify-center">
           <ThemeSwitch />
-          <NavbarMenuToggle />
+          <NavbarMenuToggle className="p-5 rounded-full" />
         </NavbarItem>
       </NavbarContent>
 
       <NavbarMenu>
-        <div className="mx-4 mt-2 flex flex-col gap-2">
+        <div className="mx-4 mt-2 flex flex-col gap-3">
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link
