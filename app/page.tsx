@@ -18,7 +18,7 @@ export default function Home() {
           className={buttonStyles({ variant: "bordered", radius: "full" })}
           href={siteConfig.navItems[2].href}
         >
-          Let's go to{" "}
+          {`Let's go to`}{" "}
           <span className="bg-gradient-to-r from-[#FF1CF7] to-[#b249f8] bg-clip-text text-transparent font-bold">
             Memes
           </span>
